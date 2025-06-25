@@ -6,7 +6,7 @@
 //Normal Function
 
 const colors = ['Red', 'Green', 'Blue'];
-console.log(colors);
+//console.log(colors);
 
 const SalesTable = {
     SalesId: 100,
@@ -25,10 +25,19 @@ const SalesLine2 = {
     Quantity: 4,
 };
 const SalesLines = [SalesLine1, SalesLine2];
+
 const SalesOrder = {
     SalesHeader: SalesTable,
     SalesLines: SalesLines,
+    PrintSalesId: () => {
+        console.log(SalesOrder.SalesHeader.SalesId);
+    },
+    PrintNetTotal: (discount) => {
+        const net = SalesOrder.SalesHeader.TotalAmount - discount;
+        console.log(net);
+    },    
 };
+
 // const SalesOrder = {
 //     SalesId: 100,
 //     Tax: 14,
@@ -48,10 +57,12 @@ const SalesOrder = {
 //     ],
 // };
 
-console.log(SalesOrder);
+SalesOrder.PrintSalesId();
+SalesOrder.PrintNetTotal(10);
 
+// console.log(SalesOrder);
 
-const isBlack = true
-const isWhite = true
+// const isBlack = true;
+// const isWhite = true;
 
-console.log(isBlack + isWhite)
+// console.log(isBlack + isWhite);
